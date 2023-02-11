@@ -10,7 +10,15 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
+        console.log("******************patient**************************")
+        let strPatient = JSON.stringify(patient, null, 4);
+        console.log(strPatient)
+        
         var pt = patient.read();
+        console.log("******************pt**************************")
+        let strPt = JSON.stringify(pt, null, 4);
+        console.log(strPt)
+        
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -28,9 +36,6 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-          console.log("testing")
-          let tempStr = JSON.stringify(obv, null, 4); // (Optional) beautiful indented output.
-          console.log(tempStr)
           
           var choles = '';
 
