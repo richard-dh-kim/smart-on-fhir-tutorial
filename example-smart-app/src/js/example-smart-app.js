@@ -49,7 +49,8 @@
           var ldl = byCodes('2089-1');
           
           var choles = byCodes('2093-3');
-          console.log("***************choles=   " + choles);
+          let cholesStr = JSON.stringify(choles, null, 4)
+          console.log("***************choles=   " + cholesStr);
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
