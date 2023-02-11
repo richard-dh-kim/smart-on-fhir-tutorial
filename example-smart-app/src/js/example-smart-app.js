@@ -27,6 +27,9 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
+          
+          let tempStr = JSON.stringify(obv, null, 4); // (Optional) beautiful indented output.
+          console.log(tempStr)
 
           var fname = '';
           var lname = '';
