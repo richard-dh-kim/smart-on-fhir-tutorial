@@ -17,7 +17,7 @@
                       code: {
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4', 'http://loinc.org|2093-3']
                       }
                     }
                   });
@@ -30,6 +30,8 @@
           console.log("testing")
           let tempStr = JSON.stringify(obv, null, 4); // (Optional) beautiful indented output.
           console.log(tempStr)
+          
+          var choles = '';
 
           var fname = '';
           var lname = '';
@@ -51,6 +53,8 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          
+          p.chloes = chloes;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -86,6 +90,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      chloes: {value: ''}
     };
   }
 
@@ -129,6 +134,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#choles').html(p.choles);
   };
 
 })(window);
