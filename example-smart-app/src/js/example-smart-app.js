@@ -140,6 +140,27 @@
     }
   }
 
+  function updatePatientInfo() {
+    let text;
+    let toEdit = prompt("Please enter observation you wish to update:", "Cholesterol");
+    if (toEdit != null || toEdit != "") {
+
+      this.fhirClient.update({
+        type: "Patient",
+        id: '5e8abafb-8a79-4f79-9311-1211b9e6bd1a',
+        resource: {
+          name: 'updatedNew Name'
+        }
+    }).catch(function(e){
+        console.log('An error happened while updating patient: \n' + JSON.stringify(e));
+        throw e;
+    }).then(function(bundle){
+        console.log('Updating patient successed');
+        return bundle;
+    });
+    }
+  }
+
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
