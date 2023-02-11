@@ -10,14 +10,8 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        console.log("******************patient**************************")
-        let strPatient = JSON.stringify(patient, null, 4);
-        console.log(strPatient)
         
         var pt = patient.read();
-        console.log("******************pt**************************")
-        let strPt = JSON.stringify(pt, null, 4);
-        console.log(strPt)
         
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -34,6 +28,15 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
+          
+          console.log("******************patient**************************")
+          let strPatient = JSON.stringify(patient, null, 4);
+          console.log(strPatient)
+          
+          console.log("******************pt**************************")
+          let strPt = JSON.stringify(pt, null, 4);
+          console.log(strPt)
+          
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           
