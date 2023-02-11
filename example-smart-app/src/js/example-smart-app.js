@@ -46,6 +46,8 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          
+          var choles = byCodes('2093-3');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -54,7 +56,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          p.chloes = choles;
+          p.choles = choles;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -90,7 +92,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      chloes: {value: ''}
+      choles: {value: ''}
     };
   }
 
