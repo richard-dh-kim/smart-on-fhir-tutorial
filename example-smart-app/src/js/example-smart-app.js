@@ -68,6 +68,10 @@
           p.height = getQuantityValueAndUnit(height[0]);
           
           p.choles = getQuantityValueAndUnit(choles[0]);
+          
+          console.log("******************choles**************************")
+          let strCholes = JSON.stringify(choles, null, 4);
+          console.log(strCholes)
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
