@@ -56,6 +56,22 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
+          console.log("******************height**************************")
+          let strheight = JSON.stringify(height, null, 4);
+          console.log(strheight)
+          console.log("******************systolicbp**************************")
+          let strsystolicbp = JSON.stringify(systolicbp, null, 4);
+          console.log(strsystolicbp)
+          console.log("******************diastolicbp**************************")
+          let strdiastolicbp = JSON.stringify(diastolicbp, null, 4);
+          console.log(strdiastolicbp)
+          console.log("******************hdl**************************")
+          let strhdl = JSON.stringify(hdl, null, 4);
+          console.log(strhdl)
+          console.log("******************ldl**************************")
+          let strldl = JSON.stringify(ldl, null, 4);
+          console.log(strldl)
+          
           var choles = byCodes('2093-3');
           let cholesStr = JSON.stringify(choles, null, 4)
           console.log("***************choles=   " + cholesStr);
