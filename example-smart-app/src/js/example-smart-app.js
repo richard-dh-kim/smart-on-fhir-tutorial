@@ -24,17 +24,17 @@
                       }
                     }
                   });
+        
+        console.log("******************patient**************************")
+        let strpatient = JSON.stringify(patient, null, 4);
+        console.log(strpatient)
 
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           
-          console.log("******************patient**************************")
-          let strPatient = JSON.stringify(patient, null, 4);
-          console.log(strPatient)
-          
           console.log("******************pt**************************")
-          let strPt = JSON.stringify(pt, null, 4);
+          let strPt = JSON.stringify(patient, null, 4);
           console.log(strPt)
           
           var byCodes = smart.byCodes(obv, 'code');
@@ -56,18 +56,6 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          console.log("******************height**************************")
-          let strheight = JSON.stringify(height, null, 4);
-          console.log(strheight)
-          console.log("******************systolicbp**************************")
-          let strsystolicbp = JSON.stringify(systolicbp, null, 4);
-          console.log(strsystolicbp)
-          console.log("******************diastolicbp**************************")
-          let strdiastolicbp = JSON.stringify(diastolicbp, null, 4);
-          console.log(strdiastolicbp)
-          console.log("******************hdl**************************")
-          let strhdl = JSON.stringify(hdl, null, 4);
-          console.log(strhdl)
           console.log("******************ldl**************************")
           let strldl = JSON.stringify(ldl, null, 4);
           console.log(strldl)
@@ -84,10 +72,7 @@
           p.height = getQuantityValueAndUnit(height[0]);
           
           p.choles = getQuantityValueAndUnit(choles[0]);
-          
-          console.log("******************choles**************************")
-          let strCholes = JSON.stringify(choles, null, 4);
-          console.log(strCholes)
+      
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
