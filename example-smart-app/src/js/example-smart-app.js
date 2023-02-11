@@ -59,7 +59,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          p.choles = choles;
+          p.choles = getQuantityValueAndUnit(choles[0]);
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
