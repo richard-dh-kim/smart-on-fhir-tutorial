@@ -54,7 +54,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          p.chloes = chloes;
+          p.chloes = choles;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
